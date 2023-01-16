@@ -1,37 +1,16 @@
-Для создания образа: 
+# Лабораторная работа 8
 
-```docker build --tag py-simpleapp .```
+## Выполните следующие действия:
 
+docker-compose up
 
-Для запуска контейнера:
-
-```docker run --name py-simpleapp -d -p 80:80 py-simpleapp```
-После: 
-```docker ps```
-
-увидим: 
-```
-CONTAINER ID   IMAGE          COMMAND                 CREATED         STATUS         PORTS                NAMES
-3c70f9ff64d7   py-simpleapp   "python simpleapp.py"   7 seconds ago   Up 6 seconds   0.0.0.0:80->80/tcp   py-simpleapp
-```
+В адресную строку впишите эндпоинт
+/initdb - чтобы создать бд с нуля
+/addlog - чтобы добавить лог
+/logs - чтобы посмотреть логи
 
 
-Для создания БД в консоли: 
-
-
-```python
-import sqlite3
-con = sqlite3.connect("database.db")
-cur = con.cursor()
-```
-
-Для создания таблицы:
-```python
-cur.execute("CREATE TABLE 'log' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'dt' TEXT, 'headers' TEXT)")
-```
-
-
-Для создания томов и хранения данных в докер:
-
-```
-docker volume create mysql
+## Результат выглядит так:
+![image](https://user-images.githubusercontent.com/60619963/212753066-eac013c6-660c-4bf0-8441-bc5ea8fcc78e.png)
+![image](https://user-images.githubusercontent.com/60619963/212753109-e6aa9f9b-4ee7-471d-9f95-3797adffa027.png)
+![image](https://user-images.githubusercontent.com/60619963/212753146-8ed197f3-5997-4603-b6fa-1533b5b88b70.png)
